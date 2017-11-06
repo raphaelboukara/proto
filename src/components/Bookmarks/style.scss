@@ -1,0 +1,47 @@
+.bookmarks {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 200px;
+
+    transition-property: width;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+
+    .bookmark {
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: darkgrey;
+
+        &.current {
+            color: initial;
+        }
+
+        &.done {
+            &:after {
+                font-size: 1.3em;
+                font-family: FontAwesome;
+                content: '\f05d';
+                color: green;
+            };
+        }
+
+        &.failed {
+            &:after {
+                font-size: 1.3em;
+                font-family: FontAwesome;
+                content: '\f05c';
+                color: red;
+            };
+        }
+
+        .step {
+            display: flex;
+            width: 100px;
+            justify-content: center;
+        }
+    }
+}
