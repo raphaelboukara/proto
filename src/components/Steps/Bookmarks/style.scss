@@ -1,20 +1,21 @@
+$gutter: 30px;
+
 .bookmarks {
     display: flex;
     height: 100%;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around;
-    width: 200px;
-
-    transition-property: width;
-    transition-duration: 250ms;
-    transition-timing-function: ease-out;
 
     .bookmark {
         display: flex;
         align-items: center;
         position: relative;
         color: darkgrey;
+        padding-right: 30px;
+        margin-top: $gutter;
+
+        &:last-of-type {
+            margin-bottom: $gutter;
+        }
 
         &.current {
             color: initial;
@@ -22,19 +23,27 @@
 
         &.done {
             &:after {
+                position: absolute;
+                right: 0;
                 font-size: 1.3em;
                 font-family: FontAwesome;
                 content: '\f05d';
                 color: green;
+                padding-left: 5px;
+                padding-right: 5px;
             };
         }
 
         &.failed {
             &:after {
+                position: absolute;
+                right: 0;
                 font-size: 1.3em;
                 font-family: FontAwesome;
                 content: '\f05c';
                 color: red;
+                padding-left: 5px;
+                padding-right: 5px;
             };
         }
 
